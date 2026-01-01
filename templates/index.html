@@ -8,7 +8,7 @@
 {% block content %}
     <header class="navbar navbar-expand-lg sticky-top border-bottom">
         <div class="container-fluid px-4 px-lg-5">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home')}}">
                 <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Health Charity Foundation logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,30 +25,23 @@
             </div>
         </div>
     </header>
-    <!-- Hero Section -->
-    <section class="hero-section text-white text-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h1 class="display-3 fw-bold mb-4">
-                        Empowering Communities. Restoring Health. Building Resilience.
-                    </h1>
-                    <p class="lead mb-5">
-                        Health Charity Foundation is a non-profit organisation based in South Sudan, dedicated to improving the health and well-being of vulnerable communities.
-                        <br>We work with families, women, and youth to create sustainable solutions in health, education, food security, and sanitation.
-                        <br>Through dialogue, empowerment, and community-driven action, HCF strives to build resilient communities where everyone has the opportunity to live a healthy, dignified, and productive life.
-                    </p>
-                    <button class="btn btn-primary btn-lg px-5 shadow-lg">Learn More</button>
+        <section class="hero-section text-white text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('{{ url_for('static', filename='images/cover.jpg') }}');">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="display-3 fw-bold mb-4">Empowering Communities. Restoring Health. Building Resilience.</h1>
+                        <p class="lead mb-5">Health Charity Foundation is an non-profit organisation based in South Sudan, dedicated to improving the health and well-being of vulnerable communities.We work with families, women, and youth to create sustainable solutions in health, education, food security, and sanitation.Through dialogue, empowerment, and community-driven action, HCF strives to build resilient communities where everyone has the opportunity to live a healthy, dignified, and productive life.</p>
+                        <button class="btn btn-primary btn-lg px-5 shadow-lg"style="background-color: #11a4d4; color: white; padding: 10px; border:none;">Learn More</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Initiatives Section -->
     <section class="py-5 py-lg-6">
         <div class="container">
             <div class="text-center mb-5">
-                <p class="text-primary text-uppercase fw-semibold mb-2">Our Initiatives</p>
+                <p class="text-uppercase fw-semibold mb-2" style="color: rgba(17, 164, 212, 0.85); letter-spacing: 1px; outline: none; border: none;">Our Initiatives</p>
                 <h2 class="display-5 fw-bold mb-3">Empowering and Building Resilient Communities</h2>
                 <p class="lead text-muted">We focus on three core areas to create lasting change:</p>
             </div>
@@ -95,7 +88,7 @@
     <section class="bg-light py-5 py-lg-6">
         <div class="container">
             <div class="text-center mb-5">
-                <p class="text-primary text-uppercase fw-semibold mb-2">GOALS 2026</p>
+                <p class="text-uppercase fw-semibold mb-2" style="color: rgba(17, 164, 212, 0.85); letter-spacing: 1px; outline: none; border: none;">GOALS 2026</p>
                 <h2 class="display-5 fw-bold">Our outreach programs in 2026</h2>
             </div>
             
