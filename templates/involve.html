@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Get Involved{% endblock %}
+
+{% block head%}
+
+{% endblock%}
+
+
+{% block content %}
+    <header class="navbar navbar-expand-lg sticky-top border-bottom">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Health Charity Foundation logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <nav class="navbar-nav gap-3">
+                    <a class="nav-link" href="{{ url_for('home')}}">Home</a>
+                    <a class="nav-link" href="{{ url_for('about')}}">About</a>
+                    <a class="nav-link" href="{{ url_for('news')}}">News</a>
+                    <a class="nav-link active fw-bold" href="{{ url_for('involve')}}">Get Involved</a>
+                    <a class="nav-link" href="{{ url_for('contact')}}">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-5 flex-grow-1">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-extrabold">Get Involved</h1>
+                <p class="text-muted mx-auto" style="max-width: 600px;">Join us in our mission to create a better world. There are many ways you can contribute and make a real difference.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="fw-bold text-primary mb-3">Volunteer</h3>
+                            <p class="text-muted">Lend your skills and passion to our projects. Join a team of dedicated individuals making a tangible impact.</p>
+                            <a href="{{ url_for('involve') }}" class="btn btn-primary mt-3">Explore Opportunities</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="fw-bold text-primary mb-3">Partner With Us</h3>
+                            <p class="text-muted">Collaborate with us to create sustainable solutions and drive meaningful change together.</p>
+                            <a href="{{ url_for('involve') }}" class="btn btn-primary mt-3">Become a Partner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock%}
+
+{% block footer%}
+{% endblock %}

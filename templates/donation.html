@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title%}Donate{% endblock %}
+
+
+{% block content %}
+    <header class="navbar navbar-expand-lg sticky-top border-bottom">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Health Charity Foundation logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <nav class="navbar-nav gap-3">
+                    <a class="nav-link" href="{{ url_for('home')}}">Home</a>
+                    <a class="nav-link" href="{{ url_for('about')}}">About</a>
+                    <a class="nav-link" href="{{ url_for('news')}}">News</a>
+                    <a class="nav-link" href="{{ url_for('involve')}}">Get Involved</a>
+                    <a class="nav-link" href="{{ url_for('contact')}}">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<!-- ===== Donation Section ===== -->
+<main class="py-lg-6 py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+
+        <div class="card shadow-sm p-4">
+          <div class="text-center mb-4">
+            <h1 class="fw-bold">Make a Difference</h1>
+            <hr>
+            <p class="text-muted">
+              Your contribution helps improve health, education, and livelihoods
+              for families across South Sudan.
+            </p>
+          </div>
+
+          <!-- Donation Form -->
+          <form id="payment-form">
+
+
+            <!-- Amount -->
+            <div class="mb-4">
+    <div class="mb-3">
+        <label for="first_name" class="form-label fw-semibold">First Name</label>
+        <input type="text" class="form-control" id="first_name" placeholder="John">
+    </div>
+
+    <div class="mb-3">
+        <label for="last_name" class="form-label fw-semibold">Last Name</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Doe">
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="john.doe@example.com">
+    </div>
+
+    <div class="mb-3">
+        <label for="amount" class="form-label fw-semibold">Donation Amount ($)</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+    </div>
+</div>
+
+            <!-- Stripe Element -->
+            <div id="payment-element" class="mb-3"></div>
+
+            <!-- Message -->
+            <div id="payment-message" class="text-danger mb-3"></div>
+
+            <!-- Submit -->
+            <button id="submit" class="btn btn-primary w-100 py-2 fw-bold">
+              Donate Now
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+<script>
+  const stripe = Stripe("pk_test_XXXXXXXXXXXXXXXXXXXX");
+  const functions = firebase.functions();
+  let elements;
+
+  async function initPayment(amount) {
+    const createIntent = functions.httpsCallable("createPaymentIntent");
+    const res = await createIntent({ amount, currency: "usd" });
+
+    elements = stripe.elements({ clientSecret: res.data.clientSecret });
+    const paymentElement = elements.create("payment");
+    paymentElement.mount("#payment-element");
+  }
+
+  const amountSelect = document.getElementById("amount");
+  const form = document.getElementById("payment-form");
+
+  initPayment(amountSelect.value);
+
+  amountSelect.addEventListener("change", () => {
+    document.getElementById("payment-element").innerHTML = "";
+    initPayment(amountSelect.value);
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    document.getElementById("submit").disabled = true;
+    document.getElementById("submit").innerText = "Processing...";
+
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: { return_url: "success.html" }
+    });
+
+    if (error) {
+      document.getElementById("payment-message").innerText = error.message;
+      document.getElementById("submit").disabled = false;
+      document.getElementById("submit").innerText = "Donate Now";
+    }
+  });
+  
+</script>
+

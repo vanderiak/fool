@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <header class="navbar navbar-expand-lg sticky-top border-bottom">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Health Charity Foundation logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <nav class="navbar-nav gap-3">
+                    <a class="nav-link active fw-bold" href="{{ url_for('home')}}">Home</a>
+                    <a class="nav-link" href="{{ url_for('about')}}">About</a>
+                    <a class="nav-link" href="{{ url_for('news')}}">News</a>
+                    <a class="nav-link" href="{{ url_for('involve')}}">Get Involved</a>
+                    <a class="nav-link" href="{{ url_for('contact')}}">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section text-white text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-3 fw-bold mb-4">
+                        Empowering Communities. Restoring Health. Building Resilience.
+                    </h1>
+                    <p class="lead mb-5">
+                        Health Charity Foundation is a non-profit organisation based in South Sudan, dedicated to improving the health and well-being of vulnerable communities.
+                        <br>We work with families, women, and youth to create sustainable solutions in health, education, food security, and sanitation.
+                        <br>Through dialogue, empowerment, and community-driven action, HCF strives to build resilient communities where everyone has the opportunity to live a healthy, dignified, and productive life.
+                    </p>
+                    <button class="btn btn-primary btn-lg px-5 shadow-lg">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="py-5 py-lg-6">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="text-primary text-uppercase fw-semibold mb-2">Our Initiatives</p>
+                <h2 class="display-5 fw-bold mb-3">Empowering and Building Resilient Communities</h2>
+                <p class="lead text-muted">We focus on three core areas to create lasting change:</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow hover-shadow">
+                        <div class="card-img-wrapper">
+                            <img src="{{ url_for('static', filename='images/wash.jpg') }}" class="card-img-top" alt="Water and Sanitation">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Water, Sanitation & Hygiene</h5>
+                            <p class="card-text">We enhance access to clean water and hygiene.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow hover-shadow">
+                        <div class="card-img-wrapper">
+                            <img src="{{url_for('static', filename='images/nutrition.jpg') }}" class="card-img-top" alt="Food Security">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Food Security & Nutrition</h5>
+                            <p class="card-text">We combat hunger and malnutrition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow hover-shadow">
+                        <div class="card-img-wrapper">
+                            <img src="{{ url_for('static', filename='images/health.jpg') }}" class="card-img-top" alt="Primary Health Care">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary Health Care & Adolescent Health</h5>
+                            <p class="card-text">We aim to build a resilient health system that focuses on women, children, and adolescents.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="bg-light py-5 py-lg-6">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="text-primary text-uppercase fw-semibold mb-2">GOALS 2026</p>
+                <h2 class="display-5 fw-bold">Our outreach programs in 2026</h2>
+            </div>
+            
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-4">
+                        <div class="card-body">
+                            <p class="display-3 fw-bold text-primary mb-2">1M+</p>
+                            <p class="fs-5 mb-0">Number of People whose lives we want to empact this year</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-4">
+                        <div class="card-body">
+                            <p class="display-3 fw-bold text-primary mb-2">100+</p>
+                            <p class="fs-5 mb-0">Health centres we are building in 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-4">
+                        <div class="card-body">
+                            <p class="display-3 fw-bold text-primary mb-2">100+</p>
+                            <p class="fs-5 mb-0">Sustainable Projects we're completing in 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="py-5 py-lg-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Get Involved</h2>
+                    <p class="lead text-muted mb-4">Join our community of changemakers and help us make a difference.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="involve.html" class="btn btn-primary px-4">Volunteer</a>
+                        <a href="donation.html" class="btn btn-primary px-4">Donate</a>
+                        <a href="involve.html" class="btn btn-primary px-4">Partner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer%}
+
+{% endblock %}
+

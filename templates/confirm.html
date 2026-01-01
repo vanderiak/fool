@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <!-- Your existing CSS file -->
+    <link href="styles.css" rel="stylesheet">
+    
+    <style>
+        .confirmation-hero {
+            position: relative;
+            min-height: 280px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        
+        .confirmation-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+        }
+        
+        .confirmation-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 2rem;
+        }
+        
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(17, 164, 212, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background-color: rgba(17, 164, 212, 0.2);
+        }
+        
+        html.dark-mode .social-btn {
+            background-color: rgba(17, 164, 212, 0.2);
+        }
+        
+        html.dark-mode .social-btn:hover {
+            background-color: rgba(17, 164, 212, 0.3);
+        }
+        
+        .social-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="border-bottom">
+        <div class="container-fluid px-4 py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <div class="d-flex align-items-center gap-3">
+                    <div style="width: 24px; height: 24px; color: var(--primary-color);">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6_535)">
+                                <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_6_535">
+                                    <rect fill="white" height="48" width="48"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="mb-0 fw-bold fs-5">Reach</h2>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="d-flex align-items-center gap-4">
+                    <nav class="d-none d-md-flex gap-4">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </nav>
+                    <button class="btn btn-primary px-4">Donate</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Hero Image -->
+                    <div class="confirmation-hero mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFfZOtXtG2x3baPYfHvYoXM-8Jq562K8IWIZVi0yD6LD6tB_TSSzQV6680MzQ0mr-cmKHzgJyA--bIIMkodsvXFkOdO-wXxghhOT0-vF3xOZpP22-VOUjdppADEz2SFRDMYZWpP7U2WnZD1hzaE6hESVwPhnfzRuA95KXSTYCg8kk3YyTWOf54LeLF_XDfz21NsDx1fprRVoNDKBnpO9ZzLGF2KEE5Op3ddqTq0hA81JBRROykBeQKJMf4kFLdQryHPN-7eXh3ETI");'>
+                        <div class="confirmation-overlay"></div>
+                        <div class="confirmation-content">
+                            <span class="material-symbols-outlined text-white mb-2" style="font-size: 3rem;">
+                                volunteer_activism
+                            </span>
+                            <h2 class="text-white display-5 fw-bold">Thank you for your contribution!</h2>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation Card -->
+                    <div class="card border">
+                        <div class="card-body p-4 p-md-5">
+                            <!-- Thank You Message -->
+                            <p class="text-center text-muted mb-4 lead">
+                                Your generous donation helps us bridge the digital divide, promote sustainable development, and raise planet awareness. We're thrilled to have you as part of the Reach community.
+                            </p>
+
+                            <!-- Donation Summary -->
+                            <div class="border-top pt-4 mb-4">
+                                <h3 class="fw-bold mb-4">Donation Summary</h3>
+                                <div class="row g-4">
+                                    <div class="col-12 col-sm-6">
+                                        <div class="d-flex justify-content-between border-bottom pb-2">
+                                            <p class="text-muted mb-0 small">Amount</p>
+                                            <p class="fw-medium mb-0 small">$50.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="d-flex justify-content-between border-bottom pb-2">
+                                            <p class="text-muted mb-0 small">Date</p>
+                                            <p class="fw-medium mb-0 small">July 26, 2024</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="d-flex justify-content-between border-bottom pb-2">
+                                            <p class="text-muted mb-0 small">Payment Method</p>
+                                            <p class="fw-medium mb-0 small">Credit Card</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="d-flex justify-content-between border-bottom pb-2">
+                                            <p class="text-muted mb-0 small">Transaction ID</p>
+                                            <p class="fw-medium mb-0 small">1234567890</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Share Section -->
+                            <div class="text-center">
+                                <h3 class="fw-bold mb-4">Share Your Impact</h3>
+                                
+                                <!-- Social Buttons -->
+                                <div class="d-flex justify-content-center gap-3 mb-4">
+                                    <button class="social-btn">
+                                        <svg fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="social-btn">
+                                        <svg fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="social-btn">
+                                        <svg fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                    <button class="btn btn-primary px-4">Return to Website</button>
+                                    <button class="btn btn-outline-primary px-4">Learn About Our Impact</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+        
+    </script>
+</body>
+</html>
