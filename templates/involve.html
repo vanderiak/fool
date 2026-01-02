@@ -57,6 +57,31 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div class="container">
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="fw-bold text-primary mb-3">Donate</h3>
+                            <p class="text-muted">Your contribution, big or small, fuels our initiatives and helps us reach more people in need.</p>
+                            <a href="{{ url_for('donation') }}" class="btn btn-primary mt-3">Make a donation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="fw-bold text-primary mb-3">Spread awareness</h3>
+                            <p class="text-muted">Be our voice. Share our stories and campaigns to amplify our message and inspire action.</p>
+                            <a href="{{ url_for('involve') }}" class="btn btn-primary mt-3">Share our work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 {% endblock%}

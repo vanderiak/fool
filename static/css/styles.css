@@ -408,3 +408,64 @@ h1, h2, h3, h4, .display-5 {
     /* Ensure no margin-bottom interferes with footer alignment */
     margin-bottom: 0 !important;
 }
+/* Force Manrope on everything */
+html, body, button, input, select, textarea, .navbar, .display-1, .display-2, .display-3, .display-4 {
+    font-family: 'Manrope', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure headings inherit the correct weight */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 700; /* Standardizes all headings to bold by default */
+}
+/* --- Mobile Centering for About Page --- */
+@media (max-width: 991.98px) {
+    /* Target the main content areas */
+    .about-section, 
+    section, 
+    .container {
+        text-align: center !important;
+    }
+
+    /* Force headings to center (sometimes display flex overrides text-align) */
+    h1, h2, h3, h4, .display-4 {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Ensure paragraphs don't stretch too wide and stay centered */
+    p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* If you have images or icons, center them too */
+    .value-icon, img {
+        margin: 0 auto 1.5rem auto !important;
+        display: block;
+    }
+}
+@media (max-width: 991.98px) {
+    /* Center the Icon Circle itself */
+    .value-icon {
+        margin: 0 auto 1.5rem auto !important;
+        display: flex !important; /* Keeps the internal icon centered */
+    }
+
+    /* Center the text and content inside the Value Cards */
+    .card-body {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This forces the children (icon/text) to center */
+    }
+
+    /* Ensure the column wrapping the card is centered */
+    .about-page .row {
+        justify-content: center !important;
+    }
+}
